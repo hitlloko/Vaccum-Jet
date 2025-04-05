@@ -1,0 +1,790 @@
+/* --- RESET CSS --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 100%;
+    margin: 5px;
+    padding: 5px;
+}
+
+/* --- HEADER & FOOTER --- */
+header {
+    background: #272d66;
+    color: white;
+    padding: clamp(10px, 3vw, 5px);
+    border-radius: 5px;
+}
+
+.footericon {
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- NAVBAR --- */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+.logo {
+    height: clamp(50px, 7vw, 100px);
+    width: auto;
+}
+
+/* --- MENU --- */
+.menu {
+    display: flex;
+    list-style: none;
+    gap: clamp(10px, 2vw, 20px);
+}
+
+.menu li a,
+.whatsbutton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: clamp(14px, 2vw, 18px);
+    padding: clamp(8px, 2vw, 12px) clamp(12px, 3vw, 20px);
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.menu li a {
+    color: white;
+}
+
+.menu li a:hover {
+    background: #8ec71a;
+    color: #272d66;
+}
+
+/* --- BOTÃO WHATSAPP --- */
+.whatsbutton {
+    border: 2px solid;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    animation: changeColor 3s infinite ease-in-out;
+    border-radius: 90px;
+}
+
+.whatsbutton svg {
+    font-size: 1.2em;
+    animation: phoneRing 1.5s infinite ease-in-out;
+}
+
+.whatsbutton:hover {
+    transform: scale(1.1);
+}
+
+/* --- MENU HAMBÚRGUER --- */
+.menu-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: clamp(24px, 4vw, 28px);
+    cursor: pointer;
+    display: none;
+    margin-top: 5px;
+    margin-left: 100px;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    .menu {
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        width: 250px;
+        height: 100vh;
+        background: #272d66;
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+        transition: left 0.3s ease-in-out;
+        border-radius: 5px;
+    }
+
+    .menu.open {
+        left: 0;
+    }
+
+    .menu-button {
+        display: block;
+    }
+}
+
+@media (min-width: 768px) {
+    .menu-button {
+        display: none;
+    }
+
+    .menu {
+        position: static;
+        width: auto;
+        height: auto;
+        flex-direction: row;
+        background: none;
+    }
+
+    .menu li a {
+        padding: clamp(8px, 2vw, 12px) clamp(12px, 3vw, 20px);
+    }
+}
+
+/* --- ANIMAÇÕES --- */
+@keyframes changeColor {
+
+    0%,
+    100% {
+        background-color: #8ec71a;
+        color: #272d66;
+        border-color: #272d66;
+    }
+
+    50% {
+        background-color: #272d66;
+        color: #8ec71a;
+        border-color: #8ec71a;
+    }
+}
+
+@keyframes phoneRing {
+
+    0%,
+    100% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    25%,
+    75% {
+        transform: rotate(-10deg) scale(1.1);
+    }
+
+    50% {
+        transform: rotate(10deg) scale(1.1);
+    }
+}
+
+/* --- EFEITO DE SURGIMENTO (FADE-IN-UP) --- */
+.fade-in-ups {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* Quando o elemento entra na tela, aplicamos a animação */
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animação do efeito */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* --------------------------*/
+
+.gradiente {
+    background-color: #8ec71a;
+    width: 30vw;
+    padding: 5px;
+}
+
+/* --- SEÇÃO SERVIÇOS --- */
+.servicos {
+    text-align: center;
+    padding: clamp(20px, 5vw, 50px);
+    background: white;
+    border-radius: 15px;
+}
+
+.titulo-servicos {
+    font-size: clamp(24px, 5vw, 32px);
+    margin-bottom: clamp(20px, 5vw, 40px);
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #8ec71a 0%, #272d66 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    /* Garante que a largura seja apenas do texto */
+    position: relative;
+    /* Necessário para posicionar a linha corretamente */
+}
+
+.titulo-servicos::after {
+    content: "";
+    display: block;
+    width: 100%;
+    /* Agora segue exatamente o tamanho do texto */
+    height: 5px;
+    /* Espessura */
+    margin: 10px auto 0;
+    /* Espaço entre o título e a linha */
+    background: linear-gradient(90deg, #8ec71a, #272d66);
+    border-radius: 5px;
+}
+
+
+.quem-somos {
+    text-align: center;
+    max-width: 1560px;
+    margin: 0 auto;
+    padding: clamp(20px, 5vw, 50px);
+}
+
+.quem-somos-texto {
+    text-align: center;
+    font-size: clamp(30px, 1.2vw, 18px);
+    line-height: 1.6;
+    color: #333;
+}
+
+.quem-somos-texto p {
+    margin-bottom: 15px;
+    color: #272d66;
+    font-size: clamp(16px, 2.0vw, 40px);
+}
+
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+    .titulo-servicos {
+        font-size: clamp(25px, 5vw, 28px);
+        /* Reduz um pouco mais no mobile */
+    }
+
+    .titulo-servicos::after {
+        height: 3px;
+        /* Linha mais fina para telas pequenas */
+        margin: 6px auto 0;
+    }
+}
+
+
+
+
+.paragrafo {
+    padding-left: 25px;
+}
+
+
+/* --- CONTAINER DE CARDS --- */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: clamp(15px, 3vw, 30px);
+    justify-content: center;
+    padding: clamp(10px, 2vw, 20px);
+    max-width: 1200px;
+    /* Define um limite máximo para evitar espaçamentos exagerados */
+    margin: 0 auto;
+}
+
+/* --- ESTILO DOS CARDS --- */
+.card-servico {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: clamp(10px, 4vw, 20px);
+    text-align: center;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.card-servico:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 30px #272d66;
+}
+
+/* --- ÍCONES GRANDES --- */
+.icon-servico {
+    font-size: clamp(40px, 6vw, 60px);
+    color: #8ec71a;
+    margin-bottom: clamp(10px, 2vw, 15px);
+}
+
+/* --- TÍTULO DOS CARDS --- */
+.card-title {
+    font-size: clamp(11px, 3vw, 25px);
+    font-weight: bold;
+    color: #272d66;
+}
+
+/*´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´*/
+/* Container de Trabalhos */
+.trabalhos-executados {
+    text-align: center;
+    padding: clamp(20px, 5vw, 50px);
+    background: #f9f9f9;
+}
+
+.titulo-trabalhos {
+    font-size: clamp(24px, 5vw, 32px);
+    color: #272d66;
+    margin-bottom: clamp(20px, 5vw, 40px);
+    text-transform: uppercase;
+}
+
+/* Organiza os trabalhos */
+.trabalhos-container {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, 5vw, 40px);
+}
+
+/* Cada trabalho (texto + imagem) */
+.trabalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    gap: 20px;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+/* Alterna a ordem do texto e da imagem em telas grandes */
+.trabalho.invertido {
+    flex-direction: row-reverse;
+}
+
+/* Texto do trabalho */
+.texto-trabalho {
+    flex: 1;
+    text-align: center;
+  
+    max-width: 1000px;
+    color: white;
+}
+
+
+/* Imagem drgb(226, 13, 113)balho */
+.imagem-trabalho {
+
+    display: flex;
+    justify-content: center;
+  
+    border-radius: 12px;
+}
+
+/* Imagem dentro do bloco */
+.imagem-trabalho img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Alternância de cores de fundo */
+.trabalho:nth-child(odd) {
+    background: #272d66;
+    /* Azul escuro */
+}
+
+.trabalho:nth-child(even) {
+    background: #8ec71a;
+    /* Verde */
+}
+
+/* Ajuste de cor para os textos conforme o fundo */
+.trabalho:nth-child(odd) .texto-trabalho {
+    color: #ffffff;
+    /* Texto branco no fundo azul */
+}
+
+.trabalho:nth-child(even) .texto-trabalho {
+    color: #272d66;
+    /* Texto azul escuro no fundo verde */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .trabalho {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .trabalho.invertido {
+        flex-direction: column;
+    }
+}
+
+/* --- SEÇÃO DE CONTATO --- */
+.contato-container {
+
+    text-align: center;
+    padding: clamp(20px, 5vw, 50px);
+    background: #ffffff;
+    color: #272d66;
+    border-radius: 12px;
+    border: solid #272d66 2px;
+    margin: clamp(20px, 5vw, 50px);
+    max-width: 1560px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- TÍTULO --- */
+.titulo-contato {
+    font-size: clamp(20px, 4vw, 28px);
+    margin-bottom: clamp(15px, 4vw, 35px);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* --- ÍCONES DE CONTATO --- */
+.icones-contato {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(10px, 3vw, 20px);
+    padding-left: 15px;
+}
+
+.icones-contatos {
+    display: flex;
+    align-items: center;
+    gap: clamp(10px, 3vw, 20px);
+    padding-left: 15px;
+
+
+
+}
+
+/* --- LINKS (ÍCONES) --- */
+.icones-contato a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(45px, 10vw, 65px);
+    height: clamp(45px, 10vw, 65px);
+    background: #8ec71a;
+    border-radius: 50%;
+    color: white;
+    font-size: clamp(20px, 5vw, 28px);
+    transition: transform 0.3s ease, background 0.3s ease;
+    text-decoration: none;
+    border: solid white 1px;
+}
+
+/* --- EFEITO HOVER --- */
+.icones-contato a:hover {
+    transform: scale(1.1);
+    background: white;
+    color: #8ec71a;
+}
+
+/* --- ALINHAMENTO DOS ITENS --- */
+.horizontal {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* --- TEXTO AO LADO DOS ÍCONES --- */
+.contatop {
+    font-size: clamp(14px, 3vw, 18px);
+    font-weight: bold;
+    color: #272d66;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 600px) {
+    .icones-contato {
+        align-items: center;
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .horizontal {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .contatop {
+        padding-left: 0;
+        font-size: 14px;
+    }
+}
+
+.footericon {
+
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+}
+
+
+.icones-contatos a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(40px, 8vw, 55px);
+    /* Ajusta o tamanho do botão de forma responsiva */
+    height: clamp(40px, 8vw, 55px);
+    background: #8ec71a;
+    /* Cor de fundo do botão */
+    border-radius: 50%;
+    /* Deixa os botões circulares */
+    color: white;
+    /* Cor do ícone */
+    font-size: clamp(18px, 4vw, 24px);
+    /* Tamanho do ícone dentro do botão */
+    transition: transform 0.3s ease, background 0.3s ease;
+    /* Suaviza animação de hover */
+    text-decoration: none;
+    /* Remove sublinhado de links */
+    border: solid white 1px;
+    /* Adiciona uma borda branca ao redor */
+}
+
+/* --- Efeito hover nos botões --- */
+.icones-contatos a:hover {
+    transform: scale(1.1);
+    /* Aumenta levemente o tamanho ao passar o mouse */
+    background: white;
+    /* Muda o fundo para branco */
+    color: #8ec71a;
+    /* Muda a cor do ícone para verde */
+}
+
+/* --- ESTILIZAÇÃO DO FOOTER --- */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    /* Permite que os elementos quebrem linha se necessário */
+    background: #8ec71a;
+    padding: clamp(10px, 3vw, 15px);
+    color: #272d66;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* --- CONTAINER DOS ÍCONES SOCIAIS --- */
+.footer-social {
+    display: flex;
+    gap: 15px;
+    /* Espaço entre os ícones */
+    align-items: center;
+}
+
+/* --- ESTILO DOS ÍCONES SOCIAIS --- */
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(40px, 8vw, 55px);
+    /* Tamanho ajustável */
+    height: clamp(40px, 8vw, 55px);
+    background: #8ec71a;
+    border-radius: 50%;
+    color: #272d66;
+    font-size: clamp(18px, 4vw, 24px);
+    transition: transform 0.3s ease, background 0.3s ease;
+    text-decoration: none;
+    border: solid #272d66 1px;
+}
+
+.footer-social a:hover {
+    transform: scale(1.1);
+    background: white;
+    color: #8ec71a;
+}
+
+/* --- TEXTO DO FOOTER --- */
+.footer-text {
+    flex: 1;
+    text-align: center;
+    font-size: clamp(14px, 3vw, 16px);
+}
+
+/* --- BOTÃO DO WHATSAPP NO FOOTER --- */
+.footer-whatsapp {
+    border: 2px solid;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 20px 20px;
+    margin: 0px 15px 0px 15px;
+    border-radius: 50px;
+    transition: 0.3s ease;
+    animation: changeColor 3s infinite ease-in-out;
+}
+
+.footer-whatsapp:hover {
+    transform: scale(1.1);
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+}
+
+.mapa-container {
+    text-align: center;
+    padding-top: clamp(20px, 5vw, 50px);
+
+    background: #ffffff;
+    color: #272d66;
+    border-radius: 12px;
+    border: solid #272d66 2px;
+    margin: clamp(20px, 5vw, 50px);
+    max-width: 1560px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.contato-containers {
+    /* display: flex; */
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    padding: clamp(5px, 5vw, 5px);
+
+    color: #272d66;
+    border-radius: 12px;
+    border: solid #272d66 2px;
+    margin: clamp(20px, 5vw, 50px);
+    max-width: 1560px;
+    margin-left: auto;
+    margin-right: auto;
+
+    flex-direction: column;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    /* Ajuste conforme necessário */
+    background: url('/foto (6).jpeg') no-repeat center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(35, 75, 207, 0.5);
+    /* Ajuste a opacidade conforme necessário */
+}
+
+.banner h1 {
+    position: relative;
+    z-index: 1;
+    font-size:clamp(45px, 2.0vw, 120px)
+    /* Mantém o texto acima da camada escura */
+}
+
+.banner h4 {
+    position: relative;
+    z-index: 1;
+    font-size:clamp(20px, 2.0vw, 40px);
+    padding-top: 30px;
+    /* Mantém o texto acima da camada escura */
+}
+
+
+
+
+.texto-trabalho p{
+    
+    font-size:clamp(20px, 2.0vw, 40px) ;
+    padding-top: 10px;
+}
+
+ul {
+    z-index: 2;
+}
+
+.botao-orcamento {
+    background: linear-gradient(135deg, #272d66, #011af7);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.botao-orcamento:hover {
+    background: linear-gradient(135deg, #4d8500, #8ec71a);
+    transform: scale(1.05);
+    box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+
+a {
+    display: inline-block;
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+
+
