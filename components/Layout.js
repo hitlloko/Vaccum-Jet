@@ -10,7 +10,7 @@ export default function Layout({ children }) {
     return (
         <div className="container">
             <Head>
-                <title>VACCUMJET</title>
+                <title>VACUUMJET</title>
             </Head>
 
             <header>

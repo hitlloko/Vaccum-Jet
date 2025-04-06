@@ -1,13 +1,13 @@
 import Layout from '../components/Layout';
 import { FaWater, FaOilCan, FaTrash, FaSink, FaCloudRain, FaToilet, FaTools, FaTruck } from "react-icons/fa";
-import { GiWaterTank } from "react-icons/gi";
+
 import { GiWarpPipe } from "react-icons/gi";
 import { IoIosWater } from "react-icons/io";
-import { FaFacebookF, FaInstagram, FaEnvelope } from "react-icons/fa";
+import { FaInstagram, FaEnvelope } from "react-icons/fa";
 import { ImWhatsapp } from "react-icons/im";
 import { FaLocationDot } from "react-icons/fa6";
 
-import { Link, Element } from 'react-scroll';
+import {  Element } from 'react-scroll';
 import useScrollAnimation from "../utils/animations";
 
 
@@ -30,7 +30,7 @@ export default function Home() {
     return (
         <Layout>
             <div className='banner'>
-                <h1>VACCUMJET</h1>
+                <h1>VACUUMJET</h1>
                 <h4>Especialistas em hidrojateamento, sucção e transporte de resíduos.</h4>
 
 
@@ -41,7 +41,7 @@ export default function Home() {
 
                 <div className="quem-somos-texto">
                     <p>
-                        A <strong>Vaccum Jet</strong> é uma empresa que atua no segmento de
+                        A <strong>Vacuum-Jet</strong> é uma empresa que atua no segmento de
                         <strong> hidrojateamento, sucção e transporte de resíduos</strong>,
                         trazendo vasto conhecimento técnico e normativo.
                     </p>
