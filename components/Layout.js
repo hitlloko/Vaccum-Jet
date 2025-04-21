@@ -41,7 +41,8 @@ export default function Layout({ children }) {
                             </li>
                         ))}
                         <li>
-                            <a href="https://wa.me/5551999756027" className="whatsbutton">
+                        
+                            <a href="https://wa.me/5551999756027?text=Olá! Gostaria de solicitar um orçamento." className="whatsbutton">
                                 <ImWhatsapp /> WHATSAPP
                             </a>
                         </li>
@@ -61,15 +62,15 @@ export default function Layout({ children }) {
                     <a href="mailto:vaccumjetsolucoes@gmail.com">
                         <FaEnvelope />
                     </a>
-                    
+
                     <a href="https://www.deraizconstrutora.com.br" target="_blank" rel="noopener noreferrer">
   <img src="/draiz-bg.jpeg" alt="DRaiz logo" className="logo2" />
 </a>
                 </div>
 
-                <button className="footer-whatsapp">
-                    <ImWhatsapp /> WHATSAPP
-                </button>
+                <a href="https://wa.me/5551999756027?text=Olá! Gostaria de solicitar um orçamento." className="whatsbutton">
+                                <ImWhatsapp /> WHATSAPP
+                            </a>
 
             
 
