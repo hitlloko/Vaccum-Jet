@@ -79,7 +79,8 @@ export default function Home() {
             <Element name="nossos-servicos">
                 <section className="servicos">
                     <h2 className="titulo-servicos fade-in-ups">Nossos Serviços</h2>
-                    <p className="descricao-servicos fade-in-ups quem-somos-texto">Solução ideal para sua empresa, condomínio ou residência. <strong>Garantimos agilidade, qualidade e preço justo.</strong></p>
+                    <p className="descricao-servicos fade-in-ups quem-somos-texto">Solução ideal para sua empresa, condomínio ou residência.</p>
+                    <p className="descricao-servicos fade-in-ups quem-somos-texto"><strong>Garantimos agilidade, qualidade e preço justo.</strong></p>
                     <div className="card-container">
                         {servicos.map((servico, index) => (
                             <div key={index} className="card-servico fade-in-up">
