@@ -61,11 +61,18 @@ export default function Layout({ children }) {
                     <a href="mailto:vaccumjetsolucoes@gmail.com">
                         <FaEnvelope />
                     </a>
+                    
+                    <a href="https://www.deraizconstrutora.com.br" target="_blank" rel="noopener noreferrer">
+  <img src="/draiz-bg.jpeg" alt="DRaiz logo" className="logo2" />
+</a>
                 </div>
 
                 <button className="footer-whatsapp">
                     <ImWhatsapp /> WHATSAPP
                 </button>
+
+            
+
             </footer>
         </div>
     );
