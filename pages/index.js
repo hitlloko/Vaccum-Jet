@@ -183,12 +183,12 @@ export default function Home() {
         <span>Email: vaccumjetsolucoes@gmail.com</span>
       </a>
 
-      <a href="https://wa.me/5551999756027" target="_blank" rel="noopener noreferrer" className="contato-item">
+      <a href="https://wa.me/5551999756027?text=Olá! Gostaria de solicitar um orçamento." target="_blank" rel="noopener noreferrer" className="contato-item">
         <ImWhatsapp className="icone" />
         <span>Cristian: (51) 99975-6027</span>
       </a>
 
-      <a href="https://wa.me/5551985429293" target="_blank" rel="noopener noreferrer" className="contato-item">
+      <a href="https://wa.me/5551985429293?text=Olá! Gostaria de solicitar um orçamento." target="_blank" rel="noopener noreferrer" className="contato-item">
         <ImWhatsapp className="icone" />
         <span>Miguel: (51) 98542-9293</span>
       </a>
