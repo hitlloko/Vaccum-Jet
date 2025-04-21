@@ -40,7 +40,7 @@ export default function Home() {
     const servicos = [
         { icon: <FaWater />, title: "LIMPEZA DE TANQUES" },
         { icon: <IoIosWater />, title: "LIMPEZA DE CAIXAS D'ÁGUA" },
-        { icon: <FaOilCan />, title: "LIMPEZA DE CAIXAS SEPARADORAS DE ÁGUE E ÓLEO" },
+        { icon: <FaOilCan />, title: "LIMPEZA DE CAIXAS SEPARADORAS DE ÁGUA E ÓLEO" },
         { icon: <FaSink />, title: "LIMPEZA DE CAIXAS DE GORDURA" },
         { icon: <FaCloudRain />, title: "LIMPEZA DE REDES PLUVIAIS" },
         { icon: <FaToilet />, title: "LIMPEZA DE FOSSAS SÉPTICAS" },
